@@ -1,0 +1,43 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-[url('/static/Photos/background1.jpg')] w-full h-full bg-fixed md:bg-no-repeat bg-cover">
+
+    <h1 class="text-center text-3xl md:text-4xl lg:text-5xl font-bold my-5 mt-10 drop-shadow-xl">
+        <span class="font-semibold text-red-800">GROCERY MANAGEMENT SYSTEM</span>
+    </h1>
+        
+    <div class="container flex flex-col justify-center items-center align-middle mt-10 shrink m-auto">
+        <div class=" md:w-[54vw]  lg:w-[30vw]  w-[75vw] text-black bg-opacity-50 bg-white rounded-xl shadow-2xl p-3">
+            
+            <h2 class="text-center text-2xl font-semibold text-red-700">{{status2 | safe}}</h2>
+            <form action="" method="post" class="py-2">
+                {% csrf_token %}
+                <h2 class="text-center text-3xl font-bold text-black">Sign in</h2>
+
+                <label for="email" class="my-2 text-lg font-semibold text-black">Username</label><br>
+                <input type="text" placeholder="Enter your username" name="username" id="email" class="my-2 w-full p-2 rounded-xl bg-transparent border-2 "><br>
+
+                <label for="password" class="my-2 text-lg font-semibold text-black">Password</label><br>
+                <input type="password" placeholder="Enter your Password" name="pass" id="pass" class="my-2 w-full p-2 rounded-xl bg-transparent border-2"><br>
+
+                <button type="submit" class="w-full my-2 p-2 text-lg font-semibold rounded-xl bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800">Login</button>
+            </form>
+            
+            <p class="text-center my-4 m-auto w-full rounded-2xl bg-opacity-50 text-black text-md font-semibold ">Already have an Account? <span class="text-blue-800  rounded-xl"><a href="{% url 'signup' %}">Sign Up</a></span></p>
+
+        
+        </div>
+    </div>
+    
+    
+</body>
+</html>
